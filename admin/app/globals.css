@@ -6,6 +6,10 @@
     }
 }
 
+body {
+    background-color: #F0F9FF;
+}
+
 .container {
     @apply max-w-7xl mx-auto px-4;
 }
