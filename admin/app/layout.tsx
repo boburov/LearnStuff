@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "LearnStuff Admin",
+  // icons:{
+  //   icon:"./logo.jpeg"
+  // },
   description: "Sell Your Knowledge, Buy Knowledge from Others",
 };
 
