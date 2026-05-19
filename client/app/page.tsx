@@ -1,7 +1,5 @@
+import AuthGate from "./AuthGate";
+
 export default function Home() {
-  return (
-    <div className="">
-     
-    </div>
-  );
+  return <AuthGate />;
 }

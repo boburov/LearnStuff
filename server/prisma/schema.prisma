@@ -18,7 +18,7 @@ model User {
   id        Int      @id @default(autoincrement())
   email     String?  @unique
   password  String
-  tgId      String
+  tgId      String   @unique
   username  String?
   role      Role     @default(USER)
   createdAt DateTime @default(now())
