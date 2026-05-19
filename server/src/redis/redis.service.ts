@@ -6,15 +6,15 @@ import type { Cache } from 'cache-manager';
 export class RedisService {
   constructor(@Inject(CACHE_MANAGER) private cache: Cache) {}
 
-  async set(tgId: number, data: unknown, ttl?: number) {
-    await this.cache.set(`user:${tgId}`, data, ttl);
+  async set(key: string, data: unknown, ttlMs?: number) {
+    await this.cache.set(key, data, ttlMs);
   }
 
-  async get<T = unknown>(tgId: number): Promise<T | null> {
-    return (await this.cache.get<T>(`user:${tgId}`)) ?? null;
+  async get<T = unknown>(key: string): Promise<T | null> {
+    return (await this.cache.get<T>(key)) ?? null;
   }
 
-  async del(tgId: number) {
-    await this.cache.del(`user:${tgId}`);
+  async del(key: string) {
+    await this.cache.del(key);
   }
 }

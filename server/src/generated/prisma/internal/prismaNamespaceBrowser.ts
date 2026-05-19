@@ -51,7 +51,9 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  Admin: 'Admin',
+  Source: 'Source'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -77,11 +79,34 @@ export const UserScalarFieldEnum = {
   tgId: 'tgId',
   username: 'username',
   role: 'role',
+  sourceId: 'sourceId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const AdminScalarFieldEnum = {
+  id: 'id',
+  tgId: 'tgId',
+  phone: 'phone',
+  name: 'name',
+  role: 'role',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type AdminScalarFieldEnum = (typeof AdminScalarFieldEnum)[keyof typeof AdminScalarFieldEnum]
+
+
+export const SourceScalarFieldEnum = {
+  id: 'id',
+  label: 'label',
+  createdAt: 'createdAt'
+} as const
+
+export type SourceScalarFieldEnum = (typeof SourceScalarFieldEnum)[keyof typeof SourceScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -108,4 +133,20 @@ export const UserOrderByRelevanceFieldEnum = {
 } as const
 
 export type UserOrderByRelevanceFieldEnum = (typeof UserOrderByRelevanceFieldEnum)[keyof typeof UserOrderByRelevanceFieldEnum]
+
+
+export const AdminOrderByRelevanceFieldEnum = {
+  tgId: 'tgId',
+  phone: 'phone',
+  name: 'name'
+} as const
+
+export type AdminOrderByRelevanceFieldEnum = (typeof AdminOrderByRelevanceFieldEnum)[keyof typeof AdminOrderByRelevanceFieldEnum]
+
+
+export const SourceOrderByRelevanceFieldEnum = {
+  label: 'label'
+} as const
+
+export type SourceOrderByRelevanceFieldEnum = (typeof SourceOrderByRelevanceFieldEnum)[keyof typeof SourceOrderByRelevanceFieldEnum]
 

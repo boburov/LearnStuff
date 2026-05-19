@@ -10,6 +10,10 @@ datasource db {
 
 enum Role {
   USER
+}
+
+enum AdminRole {
+  PENDING
   ADMIN
   SUPER_ADMIN
 }
@@ -21,6 +25,27 @@ model User {
   tgId      String   @unique
   username  String?
   role      Role     @default(USER)
+  sourceId  Int?
+  source    Source?  @relation(fields: [sourceId], references: [id], onDelete: SetNull)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([sourceId])
+}
+
+model Admin {
+  id        Int       @id @default(autoincrement())
+  tgId      String    @unique
+  phone     String?   @unique
+  name      String?
+  role      AdminRole @default(PENDING)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Source {
+  id        Int      @id @default(autoincrement())
+  label     String   @unique
+  createdAt DateTime @default(now())
+  users     User[]
 }

@@ -1,25 +1,21 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthService } from './auth.service';
-import { AuthController } from './auth.controller';
 import { PrismaService } from '../prisma/prisma.service';
-import { RedisService } from '../redis/redis.service';
-import { TelegramNotifierService } from './telegram-notifier.service';
+import { AdminController } from './admin.controller';
+import { AdminService } from './admin.service';
 
 @Module({
   imports: [
-    ConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         secret: config.get<string>('JWT_SECRET'),
-        signOptions: { expiresIn: '7d' },
       }),
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService, PrismaService, RedisService, TelegramNotifierService],
+  controllers: [AdminController],
+  providers: [AdminService, PrismaService],
 })
-export class AuthModule {}
+export class AdminModule {}

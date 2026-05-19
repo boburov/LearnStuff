@@ -1,15 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
-import { AuthService } from './auth.service';
-import { AuthController } from './auth.controller';
+import { TelegramNotifierService } from '../auth/telegram-notifier.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { RedisService } from '../redis/redis.service';
-import { TelegramNotifierService } from './telegram-notifier.service';
+import { AdminAuthController } from './admin-auth.controller';
+import { AdminAuthService } from './admin-auth.service';
 
 @Module({
   imports: [
-    ConfigModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -19,7 +18,12 @@ import { TelegramNotifierService } from './telegram-notifier.service';
       }),
     }),
   ],
-  controllers: [AuthController],
-  providers: [AuthService, PrismaService, RedisService, TelegramNotifierService],
+  controllers: [AdminAuthController],
+  providers: [
+    AdminAuthService,
+    PrismaService,
+    RedisService,
+    TelegramNotifierService,
+  ],
 })
-export class AuthModule {}
+export class AdminAuthModule {}
