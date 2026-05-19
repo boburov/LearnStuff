@@ -7,6 +7,12 @@ import { PrismaService } from '../prisma/prisma.service';
 export class AuthService {
   constructor(private prisma: PrismaService) { }
 
-  
+  // telegram login
+  async create(createAuthDto: CreateAuthDto) {
+    const { tgId } = createAuthDto;
+  }
 
+
+
+  async login(createAuthDto: CreateAuthDto) { }
 }

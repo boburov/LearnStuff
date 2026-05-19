@@ -1,0 +1,17 @@
+{
+  "name": "learnstuff",
+  "version": "1.0.0",
+  "description": "leranstuff mini bot",
+  "license": "ISC",
+  "author": "boburov",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "node-telegram-bot-api": "^0.67.0",
+    "nodemon": "^3.1.14"
+  }
+}
