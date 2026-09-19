@@ -301,6 +301,23 @@ export const SPRITES = {
     colors: { p: "#7c3aed" },
     rows: ["ppppppp", ".ppppp.", "..ppp..", "...p..."],
   },
+  dna: {
+    colors: { b: "#3b82f6", r: "#ec4899", w: "#c4b5fd" },
+    rows: [
+      "bb........rr",
+      ".bbwwwwwwrr.",
+      "..bb....rr..",
+      "...bbwwrr...",
+      "....brrb....",
+      "...rrwwbb...",
+      "..rr....bb..",
+      ".rrwwwwwwbb.",
+      "rr........bb",
+      ".rrwwwwwwbb.",
+      "..rr....bb..",
+      "...rrwwbb...",
+    ],
+  },
   island: {
     colors: { g: "#22c55e", l: "#86efac", d: "#a16207", b: "#713f12" },
     rows: [
@@ -317,6 +334,7 @@ export const SPRITES = {
 
 export const SUBJECT_SPRITES = {
   chemistry: "flask",
+  biology: "dna",
   physics: "planet",
   electronics: "chip",
   history: "dome",

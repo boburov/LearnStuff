@@ -1,4 +1,4 @@
-// Subject and topic selection data. The 3D chemistry lab is live; other lessons are previews.
+// Subject and topic selection data. Chemistry lab and biology topics are live; the rest are previews.
 export const SUBJECTS = [
   {
     "slug": "chemistry",
@@ -42,6 +42,63 @@ export const SUBJECTS = [
         "title": "Gaz qonunlari",
         "short": "Hajm, harorat va bosim orasidagi bog'lanishlar.",
         "icon": "Gauge"
+      }
+    ]
+  },
+  {
+    "slug": "biology",
+    "title": "Biologiya",
+    "short": "Tirik organizm asoslari - hujayra, DNK va inson tanasi.",
+    "icon": "Dna",
+    "color": "#059669",
+    "topics": [
+      {
+        "slug": "cell",
+        "title": "Hujayra",
+        "short": "Hujayra organoidlari bilan tanishing.",
+        "icon": "Microscope"
+      },
+      {
+        "slug": "cell-studio",
+        "title": "Hujayra studiyasi",
+        "short": "7 xil hujayrani 3D da o'rganing - organoidlar, mikroskop va solishtirish.",
+        "icon": "Microscope"
+      },
+      {
+        "slug": "dna",
+        "title": "DNK spirali",
+        "short": "Qo'sh spiral va nukleotidlarni ko'ring.",
+        "icon": "Dna"
+      },
+      {
+        "slug": "anatomy",
+        "title": "Odam anatomiyasi",
+        "short": "Mushak, qon-tomir, asab, bo'g'im va ichki a'zolar tizimlarini 3D da o'rganing.",
+        "icon": "PersonStanding"
+      },
+      {
+        "slug": "human-atlas",
+        "title": "Inson atlasi",
+        "short": "2234 ta qism, 15 tizim: qidiring, tizimlarni yoqing, portlating va ajratib ko'ring.",
+        "icon": "ScanSearch"
+      },
+      {
+        "slug": "surgery",
+        "title": "Jarrohlik",
+        "short": "Qatlamlarni yeching yoki skalpel bilan kesib ichki a'zolarni ko'ring.",
+        "icon": "Scissors"
+      },
+      {
+        "slug": "genetics",
+        "title": "Genetika (Punnett)",
+        "short": "Ota-ona allellarini tanlab, avlod nisbatlarini Punnett jadvalida ko'ring.",
+        "icon": "GitFork"
+      },
+      {
+        "slug": "simulator",
+        "title": "Odam tanasi simulyatori",
+        "short": "Inson tanasi tizimlarini interaktiv 3D simulyatorda o'rganing.",
+        "icon": "PersonStanding"
       }
     ]
   },
