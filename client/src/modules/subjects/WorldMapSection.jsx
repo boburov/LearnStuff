@@ -12,12 +12,12 @@ import Reveal from "@/shared/components/Reveal";
 // Island centers on a BOARD_W x BOARD_H board (desktop map).
 const BOARD_W = 1000;
 const BOARD_H = 400;
-const SPOTS = [
-  { x: 180, y: 280 },
-  { x: 390, y: 140 },
-  { x: 610, y: 280 },
-  { x: 830, y: 140 },
-];
+const MARGIN = 160;
+// Spots follow the subject count, so adding a subject never runs off the board.
+const SPOTS = SUBJECTS.map((_, i, all) => ({
+  x: all.length < 2 ? BOARD_W / 2 : MARGIN + ((BOARD_W - MARGIN * 2) * i) / (all.length - 1),
+  y: i % 2 ? 140 : 280,
+}));
 const START = { x: 30, y: 370 };
 
 const pathD = [START, ...SPOTS]
@@ -126,7 +126,7 @@ const WorldMapSection = () => (
           centered
           eyebrow="Fanlar xaritasi"
           eyebrowIcon={<PixelSprite name="flag" size={14} />}
-          title="To'rtta dunyo, yangi bilimlar"
+          title={`${SUBJECTS.length} ta dunyo, yangi bilimlar`}
           description="Har bir fan o'z mavzulari bilan alohida dunyo. Orolni bosing va mavzular yo'lagiga kiring."
         />
       </Reveal>
