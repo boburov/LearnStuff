@@ -8,6 +8,7 @@ import WorldMapSection from './modules/subjects/WorldMapSection';
 import SubjectPage from './modules/subjects/SubjectPage';
 import TopicPreviewPage from './modules/subjects/TopicPreviewPage';
 import LabRoute from './modules/lab-room/LabRoute';
+import BiologyRoute from './modules/biology/BiologyRoute';
 
 function PageScroll() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ export default function App() {
     <Routes>
       <Route path="/chemistry/lab" element={<LabRoute />} />
       <Route path="/chemistry/lab-3d" element={<LabRoute />} />
+      <Route path="/biology/:topic" element={<BiologyRoute />} />
       <Route element={<SiteLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/subjects" element={<><h1 className="sr-only">Fanlar</h1><WorldMapSection /></>} />
