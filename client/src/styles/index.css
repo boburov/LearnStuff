@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 60% 98%;
+    --foreground: 262 40% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 262 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 262 40% 12%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 270 40% 98%;
+    --secondary: 264 30% 95%;
+    --secondary-foreground: 262 47.4% 15%;
+    --muted: 270 30% 96%;
+    --muted-foreground: 258 12% 48%;
+    --accent: 270 60% 97%;
+    --accent-foreground: 262 47.4% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 264 30% 91%;
+    --input: 264 30% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 100% 98%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 262 40% 7%;
+    --foreground: 270 40% 98%;
+    --card: 262 38% 10%;
+    --card-foreground: 270 40% 98%;
+    --popover: 262 38% 10%;
+    --popover-foreground: 270 40% 98%;
+    --primary: 262 83% 66%;
+    --primary-foreground: 262 47.4% 11.2%;
+    --secondary: 260 25% 18%;
+    --secondary-foreground: 270 40% 98%;
+    --muted: 260 25% 18%;
+    --muted-foreground: 258 18% 68%;
+    --accent: 260 25% 18%;
+    --accent-foreground: 270 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 260 25% 18%;
+    --input: 260 25% 18%;
+    --ring: 262 83% 66%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 100%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 0 0% 100%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  body { @apply bg-background font-sans text-foreground; }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  /* Pixel uslub: zinapoya burchaklar (clip-path) */
+  .pixel-corners {
+    clip-path: polygon(
+      0 4px, 4px 4px, 4px 0, calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px,
+      100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%,
+      4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+    );
+  }
+
+  /* clip-path kesgan shaklga konturni drop-shadow chizadi - border kesilib qoladi */
+  .pixel-outline {
+    filter: drop-shadow(2px 0 0 theme(colors.pixel.ink))
+      drop-shadow(-2px 0 0 theme(colors.pixel.ink))
+      drop-shadow(0 2px 0 theme(colors.pixel.ink))
+      drop-shadow(0 -2px 0 theme(colors.pixel.ink));
+  }
+
+  .pixel-outline-shadow {
+    filter: drop-shadow(2px 0 0 theme(colors.pixel.ink))
+      drop-shadow(-2px 0 0 theme(colors.pixel.ink))
+      drop-shadow(0 2px 0 theme(colors.pixel.ink))
+      drop-shadow(0 -2px 0 theme(colors.pixel.ink))
+      drop-shadow(4px 4px 0 theme(colors.pixel.ink));
+  }
+
+  /* Own GPU layer: looping sprites/cards move without repainting the page */
+  [class*="animate-pixel-bob"],
+  [class*="animate-float-y"] {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .bg-pixel-grid {
+    background-image: linear-gradient(hsl(var(--border)) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@layer components {
+  .page-title {
+    @apply text-lg font-semibold md:leading-normal md:text-[22px];
+  }
+
+  .section-title {
+    @apply font-semibold xs:text-lg md:text-xl;
+  }
+}
+
+.bottom-navigation {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Removes 'X' from Chrome, Safari, and Edge (Chromium) */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Removes 'X' from Internet Explorer 10+ */
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
