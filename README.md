@@ -42,9 +42,18 @@ sprites, buttons, cards, subject map, and topic selection paths.
 - `client/src/modules/layout/` — navigation, footer, and not-found page.
 
 Routes: `/`, `/subjects`, `/:subject`, and `/:subject/:topic`.
-Topic pages are explicitly marked as coming soon; lesson content is not implemented.
-Biology, lab simulations, 3D/VR engines, AI services, and scientific model assets
-are not included. The server remains the minimal health API.
+The walkable chemistry lab is available at `/chemistry/lab` (`/chemistry/lab-3d`
+is an alias). It loads separately from the pixel UI and includes the room model,
+equipment, reagent cabinet, reaction simulation, physics, and sounds from SmartLab.
+Use WASD to move, the mouse to look and interact, E for the cabinet, and Esc to pause.
+The room requires WebGL 2, a keyboard, and a mouse; touch-only devices show a notice.
+Other topic pages remain coming-soon previews. Biology, classic/VR lab, AI services,
+and unrelated subject engines are not included. The server remains the health API.
+
+Run `npm run test:lab` for the imported chemistry engine regression tests.
+Lab implementation: `client/src/modules/lab-room/`.
+Assets: `client/public/models/lab-room/`, `client/public/sounds/lab/`, and
+`client/public/draco/`. Sound attribution is preserved in `sounds/lab/SOURCE.md`.
 
 The original JSX components are retained alongside the TypeScript entry point.
 Pixelify Sans and Inter are loaded from Google Fonts, with local font fallbacks.

@@ -1,4 +1,4 @@
-// Subject and topic selection data. Lesson content will be added later.
+// Subject and topic selection data. The 3D chemistry lab is live; other lessons are previews.
 export const SUBJECTS = [
   {
     "slug": "chemistry",
@@ -7,6 +7,12 @@ export const SUBJECTS = [
     "icon": "FlaskConical",
     "color": "#2563eb",
     "topics": [
+      {
+        "slug": "lab",
+        "title": "3D laboratoriya",
+        "short": "Xonada yuring, jihozlardan foydalaning va kimyoviy tajribalar o'tkazing.",
+        "icon": "FlaskConical"
+      },
       {
         "slug": "periodic-table",
         "title": "Davriy jadval",

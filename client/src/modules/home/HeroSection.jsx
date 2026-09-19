@@ -26,7 +26,7 @@ export default function HeroSection() {
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-5">
           <PixelButton to="/subjects" size="lg" icon={<PixelSprite name="flag" size={22} />}>Fanlarni ko'rish</PixelButton>
-          <PixelButton to="/chemistry" variant="secondary" size="lg" icon={<PixelSprite name="cursor" size={18} />}>Mavzularni ochish</PixelButton>
+          <PixelButton to="/chemistry/lab" variant="secondary" size="lg" icon={<PixelSprite name="cursor" size={18} />}>3D laboratoriya</PixelButton>
         </div>
         <a href="#subjects" aria-label="Fanlar xaritasiga o'tish" className="mt-10 p-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
           <PixelSprite name="arrowDown" size={20} className="motion-safe:animate-pixel-bob" />
