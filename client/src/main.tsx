@@ -3,9 +3,13 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.css'
 import './styles/scrollbars.css'
 import App from './App.jsx'
+import { QueryClientProvider } from '@tanstack/react-query'
+import queryClient from './shared/lib/query/client'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </StrictMode>,
 )
