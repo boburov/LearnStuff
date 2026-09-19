@@ -5,7 +5,7 @@ const STEPS = [
   {
     sprite: "cursor",
     title: "Fanni tanlang",
-    text: "Kimyo, fizika, elektronika yoki tarix: qiziqtirgan yo'nalishni oching.",
+    text: "Kimyo, biologiya, fizika yoki tarix: qiziqtirgan yo'nalishni oching.",
   },
   {
     sprite: "cube",
