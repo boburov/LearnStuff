@@ -1,0 +1,430 @@
+{
+ "lightmapScale": 0.9375,
+ "spawn": {
+  "position": [
+   -3.9,
+   0,
+   2.2
+  ],
+  "lookAt": [
+   0.3,
+   1.0,
+   -1.15
+  ]
+ },
+ "anchors": {
+  "whiteboard_surface": {
+   "position": [
+    0.4,
+    1.5,
+    -3.984
+   ],
+   "size": [
+    2.36,
+    1.16
+   ]
+  },
+  "poster_periodic_table": {
+   "position": [
+    3.3,
+    1.75,
+    -3.9945
+   ],
+   "size": [
+    1.364,
+    0.864
+   ]
+  },
+  "clock_face": {
+   "position": [
+    -2.2,
+    2.5,
+    -3.97
+   ],
+   "size": [
+    0.294,
+    0.294
+   ]
+  },
+  "monitor_screen": {
+   "position": [
+    1.7,
+    1.1955,
+    -0.9467
+   ],
+   "size": [
+    0.527,
+    0.297
+   ]
+  },
+  "bench_1_top": {
+   "position": [
+    0.3,
+    0.9,
+    -1.15
+   ],
+   "size": [
+    3.6,
+    1.35
+   ],
+   "note": "size = [x extent, z extent]"
+  },
+  "bench_2_top": {
+   "position": [
+    0.3,
+    0.9,
+    1.35
+   ],
+   "size": [
+    3.6,
+    1.35
+   ],
+   "note": "size = [x extent, z extent]"
+  },
+  "fumehood_switch": {
+   "position": [
+    -4.138,
+    2.24,
+    -0.38
+   ],
+   "size": [
+    0.08,
+    0.08
+   ]
+  },
+  "fumehood_work_surface": {
+   "position": [
+    -4.54,
+    0.92,
+    -0.85
+   ],
+   "size": [
+    0.78,
+    1.26
+   ],
+   "note": "size = [x extent, z extent]"
+  },
+  "door": {
+   "position": [
+    -5.0,
+    1.05,
+    2.9
+   ],
+   "size": [
+    1.0,
+    2.1
+   ]
+  },
+  "sign_exit": {
+   "position": [
+    -4.9392,
+    2.33,
+    2.9
+   ],
+   "size": [
+    0.35,
+    0.14
+   ]
+  },
+  "ventilation_switch": {
+   "position": [
+    -4.99,
+    1.2,
+    2.09
+   ],
+   "size": [
+    0.08,
+    0.08
+   ]
+  },
+  "light_switch": {
+   "position": [
+    -4.99,
+    1.2,
+    2.22
+   ],
+   "size": [
+    0.08,
+    0.08
+   ]
+  },
+  "extinguisher": {
+   "position": [
+    -4.6,
+    0.92,
+    3.905
+   ],
+   "size": [
+    0.16,
+    0.53
+   ]
+  },
+  "fire_blanket": {
+   "position": [
+    -4.15,
+    1.5,
+    3.925
+   ],
+   "size": [
+    0.26,
+    0.32
+   ]
+  },
+  "first_aid_box": {
+   "position": [
+    -3.75,
+    1.6,
+    3.87
+   ],
+   "size": [
+    0.34,
+    0.28
+   ]
+  },
+  "alarm_bell": {
+   "position": [
+    -4.5,
+    2.4,
+    3.913
+   ],
+   "size": [
+    0.16,
+    0.16
+   ]
+  },
+  "alarm_light": {
+   "position": [
+    -4.15,
+    2.42,
+    3.935
+   ],
+   "size": [
+    0.08,
+    0.08
+   ]
+  },
+  "chem_cabinet": {
+   "position": [
+    -2.8,
+    1.0,
+    3.55
+   ],
+   "size": [
+    1.0,
+    2.0
+   ]
+  },
+  "sink": {
+   "position": [
+    0.6,
+    0.9,
+    3.7
+   ],
+   "size": [
+    0.5,
+    0.4
+   ],
+   "note": "bowl 0.25 m deep; size = [x extent, z extent]",
+   "bottomY": 0.62,
+   "faucetOutlet": [
+    0.6,
+    1.2,
+    3.69
+   ]
+  },
+  "eyewash": {
+   "position": [
+    2.8,
+    1.2,
+    3.62
+   ],
+   "size": [
+    0.25,
+    0.1
+   ]
+  },
+  "waste_bin": {
+   "position": [
+    3.5,
+    0.48,
+    3.7
+   ],
+   "size": [
+    0.33,
+    0.33
+   ]
+  }
+ },
+ "lightmap": {
+  "high": "lightmap-high.webp",
+  "low": "lightmap-low.webp",
+  "uvChannel": 1,
+  "colorSpace": "srgb",
+  "flipY": false,
+  "decode": "linear = srgbToLinear(texel) * lightmapScale",
+  "threeLightMapIntensity": 2.94524,
+  "note": "Baked Cycles DIFFUSE (direct+indirect, no color): final diffuse = albedo * decoded value. three.js MeshStandardMaterial divides lightMap by PI, hence threeLightMapIntensity = scale*PI.",
+  "texelsPerMeterHigh": 134.9,
+  "bakeSamples": 1024
+ },
+ "exterior": {
+  "file": "exterior.jpg",
+  "projection": "equirectangular",
+  "note": "Already rotated to match the bake; use as-is with EquirectangularReflectionMapping."
+ },
+ "objects": {
+  "ceiling_light_1": {
+   "origin": [
+    -2.7,
+    3.1895000000000002,
+    -2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_2": {
+   "origin": [
+    0.3,
+    3.1895000000000002,
+    -2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_3": {
+   "origin": [
+    3.3,
+    3.1895000000000002,
+    -2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_4": {
+   "origin": [
+    -2.7,
+    3.1895000000000002,
+    0.0
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_5": {
+   "origin": [
+    0.3,
+    3.1895000000000002,
+    0.0
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_6": {
+   "origin": [
+    3.3,
+    3.1895000000000002,
+    0.0
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_7": {
+   "origin": [
+    -2.7,
+    3.1895000000000002,
+    2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_8": {
+   "origin": [
+    0.3,
+    3.1895000000000002,
+    2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "ceiling_light_9": {
+   "origin": [
+    3.3,
+    3.1895000000000002,
+    2.4
+   ],
+   "note": "emissive LED panel (4500K)"
+  },
+  "fumehood_switch": {
+   "origin": [
+    -4.138000000000001,
+    2.24,
+    -0.38
+   ],
+   "note": "plate + rocker, faces +x"
+  },
+  "fumehood_sash": {
+   "origin": [
+    -4.18,
+    1.3,
+    -0.8500000000000001
+   ],
+   "note": "vertical sliding sash, origin at its bottom edge (baked at y=1.3). Move together with glass_fumehood_sash (same origin); sensible range y 0.92..1.9"
+  },
+  "glass_fumehood_sash": {
+   "origin": [
+    -4.18,
+    1.3,
+    -0.8500000000000001
+   ],
+   "note": "glass pane of fumehood_sash"
+  },
+  "fumehood_light": {
+   "origin": [
+    -4.36,
+    1.99,
+    -0.8500000000000001
+   ],
+   "note": "light strip inside the hood (baked OFF)"
+  },
+  "door": {
+   "origin": [
+    -5.075,
+    0.0,
+    3.384
+   ],
+   "note": "origin on the hinge axis (rotate about +Y); opens outward (-x)"
+  },
+  "glass_door": {
+   "origin": [
+    -5.075,
+    0.0,
+    3.384
+   ],
+   "note": "frosted vision panel of door (same pivot)"
+  },
+  "ventilation_switch": {
+   "origin": [
+    -4.99,
+    1.2,
+    2.09
+   ],
+   "note": "plate + rocker, faces +x"
+  },
+  "extinguisher": {
+   "origin": [
+    -4.6,
+    0.655,
+    3.905
+   ],
+   "note": "origin at the bottom centre; bracket is static"
+  },
+  "alarm_bell": {
+   "origin": [
+    -4.5,
+    2.4,
+    3.95
+   ],
+   "note": "red gong faces -z; back box is static"
+  },
+  "alarm_light": {
+   "origin": [
+    -4.15,
+    2.42,
+    3.97
+   ],
+   "note": "red strobe lens (baked OFF)"
+  }
+ },
+ "coordinates": "three.js meters, Y up; room interior x[-5,5] z[-4,4] y[0,3.2]"
+}
