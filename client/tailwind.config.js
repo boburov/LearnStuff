@@ -14,6 +14,22 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        // Lab room: short notice that stays readable, then fades.
+        "flash-out": {
+          "0%, 70%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        // Lab room: the cabinet's glass doors swing open toward the player, then get out of the way.
+        "cabinet-door-left": {
+          "0%": { transform: "perspective(1600px) rotateY(0deg)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": { transform: "perspective(1600px) rotateY(-108deg)", opacity: "0" },
+        },
+        "cabinet-door-right": {
+          "0%": { transform: "perspective(1600px) rotateY(0deg)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": { transform: "perspective(1600px) rotateY(108deg)", opacity: "0" },
+        },
         // AI chat: xabar pastdan silliq ko'tariladi.
         "msg-in": {
           "0%": { opacity: "0", transform: "translateY(10px) scale(0.97)" },
@@ -72,6 +88,9 @@ export default {
         },
       },
       animation: {
+        "flash-out": "flash-out 1.8s ease-in forwards",
+        "cabinet-door-left": "cabinet-door-left 0.8s cubic-bezier(0.5, 0, 0.2, 1) 0.08s forwards",
+        "cabinet-door-right": "cabinet-door-right 0.8s cubic-bezier(0.5, 0, 0.2, 1) 0.08s forwards",
         "msg-in": "msg-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both",
         "halo-pulse": "halo-pulse 2.4s ease-in-out infinite",
         "spin-slow": "spin-slow 3s linear infinite",

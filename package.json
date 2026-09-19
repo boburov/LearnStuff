@@ -15,7 +15,8 @@
     "dev:server": "npm run dev -w server",
     "build": "npm run build -w client",
     "lint": "npm run lint --workspaces",
-    "start": "npm run start -w server"
+    "start": "npm run start -w server",
+    "test:lab": "npm run test:lab -w client"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
