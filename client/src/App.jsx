@@ -7,9 +7,8 @@ import HomePage from './modules/home/HomePage';
 import WorldMapSection from './modules/subjects/WorldMapSection';
 import SubjectPage from './modules/subjects/SubjectPage';
 import TopicPreviewPage from './modules/subjects/TopicPreviewPage';
-import LabRoute from './modules/lab-room/LabRoute';
-import BiologyRoute from './modules/biology/BiologyRoute';
-import PhysicsRoute from './modules/physics/PhysicsRoute';
+import TopicRoute from './modules/topics/TopicRoute';
+import { TOPIC_KEYS } from './modules/topics/topicPages';
 
 function PageScroll() {
   const { pathname } = useLocation();
@@ -32,10 +31,9 @@ export default function App() {
   return <BrowserRouter>
     <PageScroll />
     <Routes>
-      <Route path="/chemistry/lab" element={<LabRoute />} />
-      <Route path="/chemistry/lab-3d" element={<LabRoute />} />
-      <Route path="/biology/:topic" element={<BiologyRoute />} />
-      <Route path="/physics/:topic" element={<PhysicsRoute />} />
+      {TOPIC_KEYS.map((key) => (
+        <Route key={key} path={`/${key}`} element={<TopicRoute topicKey={key} />} />
+      ))}
       <Route element={<SiteLayout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/subjects" element={<><h1 className="sr-only">Fanlar</h1><WorldMapSection /></>} />
