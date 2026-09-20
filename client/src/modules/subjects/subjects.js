@@ -1,4 +1,4 @@
-// Subject and topic selection data. Chemistry lab and biology topics are live; the rest are previews.
+// Subject and topic selection data. Chemistry lab, biology topics and the physics engine are live; the rest are previews.
 export const SUBJECTS = [
   {
     "slug": "chemistry",

@@ -47,7 +47,9 @@ is an alias). It loads separately from the pixel UI and includes the room model,
 equipment, reagent cabinet, reaction simulation, physics, and sounds from SmartLab.
 Use WASD to move, the mouse to look and interact, E for the cabinet, and Esc to pause.
 The room requires WebGL 2, a keyboard, and a mouse; touch-only devices show a notice.
-Other topic pages remain coming-soon previews. Biology, classic/VR lab, AI services,
+Physics has the four-stroke engine at `/physics/engine`: a procedural 3D engine with
+solid, x-ray and exploded modes, stroke stepping, sound and part cards.
+Other topic pages remain coming-soon previews. Classic/VR lab, AI services,
 and unrelated subject engines are not included. The server remains the health API.
 
 Run `npm run test:lab` for the imported chemistry engine regression tests.
