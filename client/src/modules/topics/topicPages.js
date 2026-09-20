@@ -15,6 +15,7 @@ export const TOPIC_PAGES = {
   'chemistry/periodic-table': lazy(() => import('@/modules/chemistry/periodic/PeriodicTablePage')),
   'electronics/arduino': lazy(() => import('@/modules/electronics/circuit/CircuitPage')),
   'history/registan': lazy(() => import('@/modules/history/registan/RegistanGuidePage')),
+  'history/atlas': lazy(() => import('@/modules/history/atlas/AtlasPage')),
   'biology/cell': lazy(() => import('@/modules/biology/cell/CellPage')),
   'biology/cell-studio': lazy(() => import('@/modules/biology/cell-studio/CellStudioPage')),
   'biology/dna': lazy(() => import('@/modules/biology/dna/DnaPage')),
