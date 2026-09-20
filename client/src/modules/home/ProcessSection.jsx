@@ -5,17 +5,17 @@ const STEPS = [
   {
     sprite: "cursor",
     title: "Fanni tanlang",
-    text: "Kimyo, biologiya, fizika yoki tarix: qiziqtirgan yo'nalishni oching.",
+    text: "Kimyo, biologiya, fizika, elektronika yoki tarix: qiziqtirgan yo'nalishni oching.",
   },
   {
-    sprite: "cube",
-    title: "Mavzuni tanlang",
-    text: "Mavzular yo'lagi bo'ylab yuring va qiziqqan mavzu haqida qisqacha bilib oling.",
+    sprite: "flask",
+    title: "Mavzuni sinab ko'ring",
+    text: "3D sahnada modelni aylantiring, tajriba o'tkazing, parametrlarni o'zgartirib natijani kuzating.",
   },
   {
     sprite: "sparkle",
-    title: "Keyingi qadamga o'ting",
-    text: "Fanlar xaritasiga qaytib, boshqa yo'nalishlarni ham kashf eting.",
+    title: "AI dan so'rang",
+    text: "Tushunmagan joyingizni o'sha sahnaning o'zida AI o'qituvchidan o'zbek tilida so'rang.",
   },
 ];
 
@@ -26,8 +26,8 @@ const ProcessSection = () => (
         centered
         eyebrow="Qanday ishlaydi"
         eyebrowIcon={<PixelSprite name="cursor" size={10} />}
-        title="Bilim sari uch qadam"
-        description="Qiziqishdan boshlang. O'zingizga mos mavzuni toping."
+        title="Uch qadamda tajribaga"
+        description="Ro'yxatdan o'tish, dastur o'rnatish yoki qo'shimcha jihoz shart emas."
       />
     </Reveal>
 
