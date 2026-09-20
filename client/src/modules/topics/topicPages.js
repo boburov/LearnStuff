@@ -10,6 +10,8 @@ export const TOPIC_PAGES = {
   'chemistry/ph': lazy(() => import('@/modules/chemistry/ph/PhPage')),
   'chemistry/gas-laws': lazy(() => import('@/modules/chemistry/gas-laws/GasLawsPage')),
   'chemistry/molecules': lazy(() => import('@/modules/chemistry/molecules/MoleculesPage')),
+  // The single-bench lab, for phones and computers that cannot run the room.
+  'chemistry/lab-classic': lazy(() => import('@/modules/chemistry/lab-classic/LabBenchPage')),
   'biology/cell': lazy(() => import('@/modules/biology/cell/CellPage')),
   'biology/cell-studio': lazy(() => import('@/modules/biology/cell-studio/CellStudioPage')),
   'biology/dna': lazy(() => import('@/modules/biology/dna/DnaPage')),
