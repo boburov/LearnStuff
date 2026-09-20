@@ -19,7 +19,7 @@ const AtlasDetailCard = ({ chosen, parts, isolate, onIsolate, onPickPart, onClos
         <div className="flex items-start gap-2.5">
           <span className="mt-1 size-3.5 shrink-0 rounded-full ring-1 ring-black/10" style={{ backgroundColor: system?.color }} />
           <div className="min-w-0 flex-1">
-            <div className="text-[11px] uppercase tracking-wide text-muted-foreground">{system?.name || "Anatomiya"}</div>
+            <div className="text-[13px] uppercase tracking-wide text-muted-foreground">{system?.name || "Anatomiya"}</div>
             <h3 className="text-base font-semibold leading-tight">{uz}</h3>
             {uz.toLowerCase() !== chosen.name.toLowerCase() && (
               <div className="text-xs text-muted-foreground">{chosen.name}</div>
@@ -36,7 +36,7 @@ const AtlasDetailCard = ({ chosen, parts, isolate, onIsolate, onPickPart, onClos
 
         <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{info.text}</p>
         {!info.specific && (
-          <p className="mt-1 text-[11px] text-muted-foreground/80">Tizim haqida umumiy izoh. Tuzilma manba anatomiyasidan aniqlangan.</p>
+          <p className="mt-1 text-[13px] text-muted-foreground/80">Tizim haqida umumiy izoh. Tuzilma manba anatomiyasidan aniqlangan.</p>
         )}
 
         <dl className="mt-3 grid grid-cols-2 gap-2 text-xs">
@@ -67,7 +67,7 @@ const AtlasDetailCard = ({ chosen, parts, isolate, onIsolate, onPickPart, onClos
               ))}
             </ul>
             {parts.length > MAX_MEMBERS && (
-              <p className="mt-1 text-[11px] text-muted-foreground">Yana {parts.length - MAX_MEMBERS} ta qism.</p>
+              <p className="mt-1 text-[13px] text-muted-foreground">Yana {parts.length - MAX_MEMBERS} ta qism.</p>
             )}
           </div>
         )}

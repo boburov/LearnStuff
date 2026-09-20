@@ -48,7 +48,7 @@ const Island = ({ subject, index }) => (
       className="-mt-1"
     />
     <PixelCard className="-mt-3 w-full px-3 py-2 text-center transition-[transform,box-shadow] duration-150 group-hover:-translate-y-0.5 group-hover:shadow-[6px_6px_0_0_theme(colors.pixel.ink)] group-focus-visible:ring-2 group-focus-visible:ring-ring motion-reduce:transition-none">
-      <p className="font-pixel text-[11px] font-medium uppercase tracking-wider" style={{ color: subject.color }}>
+      <p className="font-pixel text-[13px] font-medium uppercase tracking-wider" style={{ color: subject.color }}>
         {index + 1}-dunyo
       </p>
       <p className="font-pixel text-lg font-bold leading-tight">{subject.title}</p>
@@ -105,7 +105,7 @@ const MapCards = () => (
             <PixelSprite name={SUBJECT_SPRITES[subject.slug]} size={40} />
           </span>
           <span className="min-w-0">
-            <span className="block font-pixel text-[11px] font-medium uppercase tracking-wider" style={{ color: subject.color }}>
+            <span className="block font-pixel text-[13px] font-medium uppercase tracking-wider" style={{ color: subject.color }}>
               {i + 1}-dunyo · {subject.topics.length} ta mavzu
             </span>
             <span className="block font-pixel text-xl font-bold">{subject.title}</span>

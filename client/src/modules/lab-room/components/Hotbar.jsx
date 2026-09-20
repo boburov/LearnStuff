@@ -13,7 +13,7 @@ const Slot = ({ index, object, url, active, highlight, onPointerDown }) => (
       object && onPointerDown && "cursor-grab",
     )}
   >
-    <span className="absolute left-1.5 top-1 text-[10px] font-semibold text-white/60">{index + 1}</span>
+    <span className="absolute left-1.5 top-1 text-[12px] font-semibold text-white/60">{index + 1}</span>
     {object && url && <img src={url} alt="" draggable={false} className="size-14 object-contain" />}
     {object && !url && <span className="size-6 animate-pulse rounded-full bg-white/20" />}
   </div>

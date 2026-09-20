@@ -303,7 +303,7 @@ const createPaintMaterial = ({ body, band }, seed, v) => {
   });
 };
 
-const STENCIL_FONT = `700 120px Inter, "Arial Narrow", Arial, sans-serif`;
+const STENCIL_FONT = `700 120px "Inter Variable", Inter, "Arial Narrow", Arial, sans-serif`;
 
 const paintStencil = (ctx, W, H, { stencil, stencilColor }, seed) => {
   const letter = 120;

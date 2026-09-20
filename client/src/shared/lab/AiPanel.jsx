@@ -161,7 +161,7 @@ const Bubble = ({ msg }) => {
           </div>
         )}
         {msg.action?.ok && (
-          <div className="mt-1 inline-flex animate-pop items-center gap-1 rounded-full bg-gradient-to-r from-emerald-50 to-teal-50 px-2 py-0.5 text-[11px] font-medium text-emerald-600 ring-1 ring-emerald-200/60">
+          <div className="mt-1 inline-flex animate-pop items-center gap-1 rounded-full bg-gradient-to-r from-emerald-50 to-teal-50 px-2 py-0.5 text-[13px] font-medium text-emerald-600 ring-1 ring-emerald-200/60">
             {actionText(msg.action)}
           </div>
         )}

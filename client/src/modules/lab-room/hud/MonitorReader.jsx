@@ -12,7 +12,7 @@ const badgeClass = {
 
 const Field = ({ label, children }) => (
   <div>
-    <p className="text-[11px] font-semibold uppercase tracking-wider text-sky-300/80">{label}</p>
+    <p className="text-[13px] font-semibold uppercase tracking-wider text-sky-300/80">{label}</p>
     <div className="mt-1 text-sm leading-relaxed text-white/90">{children}</div>
   </div>
 );
@@ -63,7 +63,7 @@ const MonitorReader = ({ lab, onClose }) => {
           )}
           {history.length > 1 && (
             <div className="border-t border-white/10 pt-3">
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-white/50">{MONITOR_TEXT.history}</p>
+              <p className="text-[13px] font-semibold uppercase tracking-wider text-white/50">{MONITOR_TEXT.history}</p>
               <ul className="mt-2 space-y-1 text-sm text-white/80">
                 {history.slice(1).map((id) => (
                   <li key={id}>{reactionInfo(id)?.title ?? id}</li>

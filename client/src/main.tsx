@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@fontsource-variable/pixelify-sans'
+import '@fontsource-variable/inter'
 import './styles/index.css'
 import './styles/scrollbars.css'
 import App from './App.jsx'

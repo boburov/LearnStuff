@@ -21,7 +21,7 @@ const Toast = ({ item }) => {
       <div className={cn("w-[min(460px,90vw)] rounded-xl border-l-4 bg-black/65 px-4 py-2.5 text-white shadow-lg", toneClass[danger.tone])}>
         <p className="text-sm font-semibold">{info.title}</p>
         <p className="mt-0.5 line-clamp-2 text-xs text-white/80">{info.observation}</p>
-        <p className="mt-1 text-[11px] text-white/55">{MONITOR_TEXT.hint}</p>
+        <p className="mt-1 text-[13px] text-white/55">{MONITOR_TEXT.hint}</p>
       </div>
     );
   }

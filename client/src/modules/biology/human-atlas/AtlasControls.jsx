@@ -81,16 +81,16 @@ const AtlasControls = ({
                   <span className="min-w-0">
                     <span className="block truncate font-medium">{uz}</span>
                     {uz.toLowerCase() !== c.name.toLowerCase() && (
-                      <span className="block truncate text-[11px] text-muted-foreground">{c.name}</span>
+                      <span className="block truncate text-[13px] text-muted-foreground">{c.name}</span>
                     )}
                   </span>
-                  <span className="shrink-0 text-[11px] text-muted-foreground">{c.elements.length} qism</span>
+                  <span className="shrink-0 text-[13px] text-muted-foreground">{c.elements.length} qism</span>
                 </button>
               </li>
             );
           })}
         </ul>
-        <p className="text-[11px] text-muted-foreground">
+        <p className="text-[13px] text-muted-foreground">
           {query ? `Eng ko'pi ${MAX_RESULTS} ta natija. Kichik tuzilmalar uchun aniqroq yozing.` : "Asosiy a'zolar. Istalgan nomni inglizcha yoki o'zbekcha yozing."}
         </p>
       </section>
@@ -109,7 +109,7 @@ const AtlasControls = ({
           aria-label="Anatomiyani portlatish darajasi"
           className="w-full accent-primary"
         />
-        <div className="flex justify-between text-[11px] text-muted-foreground">
+        <div className="flex justify-between text-[13px] text-muted-foreground">
           <span>Yig'ilgan</span>
           <span>Har bir qism</span>
         </div>
@@ -118,7 +118,7 @@ const AtlasControls = ({
       <section className="space-y-2">
         <div className="flex items-center justify-between">
           <h2 className="text-sm font-semibold">Tizimlar</h2>
-          <div className="flex gap-1 text-[11px]">
+          <div className="flex gap-1 text-[13px]">
             <button onClick={() => onVisible(activeSystems.map((s) => s.id))} className="rounded px-1.5 py-0.5 text-primary hover:bg-secondary">
               Hammasi
             </button>
@@ -147,15 +147,15 @@ const AtlasControls = ({
                   <span className="size-2.5 shrink-0 rounded-full ring-1 ring-black/10" style={{ backgroundColor: s.color }} />
                   <span className="truncate">{s.name}</span>
                 </button>
-                <span className="text-[11px] tabular-nums text-muted-foreground">{counts[s.id]}</span>
+                <span className="text-[13px] tabular-nums text-muted-foreground">{counts[s.id]}</span>
               </li>
             );
           })}
         </ul>
-        <p className="text-[11px] text-muted-foreground">{visibleCount.toLocaleString("uz")} ta qism ko'rinmoqda. Nomni bossangiz faqat shu tizim qoladi.</p>
+        <p className="text-[13px] text-muted-foreground">{visibleCount.toLocaleString("uz")} ta qism ko'rinmoqda. Nomni bossangiz faqat shu tizim qoladi.</p>
       </section>
 
-      <p className="border-t border-border pt-3 text-[11px] leading-relaxed text-muted-foreground">
+      <p className="border-t border-border pt-3 text-[13px] leading-relaxed text-muted-foreground">
         Manba: BodyParts3D 4.0, © The Database Center for Life Science, CC BY 4.0. Katta yoshli erkak
         etalon anatomiyasi; ta'lim uchun, tibbiy tashxis vositasi emas.
       </p>

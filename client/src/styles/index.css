@@ -15,7 +15,7 @@
     --secondary: 264 30% 95%;
     --secondary-foreground: 262 47.4% 15%;
     --muted: 270 30% 96%;
-    --muted-foreground: 258 12% 48%;
+    --muted-foreground: 258 16% 38%;
     --accent: 270 60% 97%;
     --accent-foreground: 262 47.4% 15%;
     --destructive: 0 84.2% 60.2%;
@@ -51,7 +51,7 @@
     --secondary: 260 25% 18%;
     --secondary-foreground: 270 40% 98%;
     --muted: 260 25% 18%;
-    --muted-foreground: 258 18% 68%;
+    --muted-foreground: 258 22% 78%;
     --accent: 260 25% 18%;
     --accent-foreground: 270 40% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -76,7 +76,26 @@
 }
 
 @layer base {
-  body { @apply bg-background font-sans text-foreground; }
+  /* Pixelify Sans everywhere. Its stems are one pixel wide, so the body text
+     needs a heavier weight, a little tracking and roomier lines to stay legible. */
+  body {
+    @apply bg-background font-pixel text-foreground;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1.65;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Headings carry the pixel look on their own; extra tracking only blurs them. */
+  h1, h2, h3, h4 { letter-spacing: 0; }
+
+  /* Uppercase pixel glyphs collide without a gap. */
+  .uppercase { letter-spacing: 0.06em; }
+
+  /* Real numbers, not faux-bold: the font ships 400-700. */
+  strong, b { font-weight: 700; }
 }
 
 @layer utilities {

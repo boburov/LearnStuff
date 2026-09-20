@@ -58,5 +58,7 @@ Assets: `client/public/models/lab-room/`, `client/public/sounds/lab/`, and
 `client/public/draco/`. Sound attribution is preserved in `sounds/lab/SOURCE.md`.
 
 The original JSX components are retained alongside the TypeScript entry point.
-Pixelify Sans and Inter are loaded from Google Fonts, with local font fallbacks.
+Pixelify Sans carries every piece of interface text and ships with the bundle
+(`@fontsource-variable`), so it renders the same on a slow school network as it
+does offline. Inter stays for the labels painted into 3D textures.
 Production hosting should send client routes to `index.html` for SPA navigation.

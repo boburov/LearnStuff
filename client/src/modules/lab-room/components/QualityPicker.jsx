@@ -24,7 +24,7 @@ const QualityPicker = ({ tier, recommended, onChange }) => (
             <span className="flex items-center gap-2 text-sm font-semibold">
               {option.label}
               {recommended === option.id && (
-                <span className="rounded-full bg-emerald-400/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-emerald-300">
+                <span className="rounded-full bg-emerald-400/15 px-2 py-0.5 text-[12px] font-semibold uppercase tracking-wide text-emerald-300">
                   {TEXT.recommended}
                 </span>
               )}

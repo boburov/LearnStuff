@@ -5,8 +5,17 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        pixel: ["'Pixelify Sans'", "Inter", "sans-serif"],
+        sans: ["'Inter Variable'", "Inter", "sans-serif"],
+        pixel: ["'Pixelify Sans Variable'", "'Pixelify Sans'", "Inter", "sans-serif"],
+      },
+      // Pixelify Sans reads about one step smaller than Inter, so the small end
+      // of the scale is lifted; 14px is the floor for anything a learner reads.
+      fontSize: {
+        xs: ["0.875rem", { lineHeight: "1.25rem", letterSpacing: "0.02em" }],
+        sm: ["0.9375rem", { lineHeight: "1.5rem", letterSpacing: "0.015em" }],
+        base: ["1.0625rem", { lineHeight: "1.75rem" }],
+        lg: ["1.1875rem", { lineHeight: "1.875rem" }],
+        xl: ["1.375rem", { lineHeight: "2rem" }],
       },
       borderRadius: {
         lg: "var(--radius)",

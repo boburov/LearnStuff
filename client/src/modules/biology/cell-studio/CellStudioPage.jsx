@@ -241,7 +241,7 @@ const CellStudioPage = () => {
                     className="flex min-w-[92px] flex-1 flex-col items-center gap-2 rounded-xl border border-border p-2.5 transition hover:border-primary/40"
                   >
                     <span className="h-10 w-full rounded-lg" style={{ background: image.tone }} />
-                    <strong className="text-center text-[11px] font-medium leading-tight">{image.label}</strong>
+                    <strong className="text-center text-[13px] font-medium leading-tight">{image.label}</strong>
                   </button>
                 ))}
                 <button
@@ -249,7 +249,7 @@ const CellStudioPage = () => {
                   className="flex min-w-[92px] flex-1 flex-col items-center justify-center gap-1.5 rounded-xl border border-dashed border-border p-2.5 text-muted-foreground hover:border-primary/40"
                 >
                   <Plus size={22} />
-                  <strong className="text-[11px] font-medium">Rasm qo'shish</strong>
+                  <strong className="text-[13px] font-medium">Rasm qo'shish</strong>
                 </button>
               </div>
             </Panel>
@@ -312,7 +312,7 @@ const CellStudioPage = () => {
           <Panel title="Biologik izohlar">
             <p className="text-sm text-muted-foreground">{organelle.note}</p>
             <div className="mt-3 rounded-xl bg-secondary/60 p-3">
-              <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Klinik kontekst</span>
+              <span className="text-[13px] font-semibold uppercase tracking-wide text-muted-foreground">Klinik kontekst</span>
               <p className="mt-1 text-sm">{cell.clinicalContext}</p>
             </div>
             <div className="mt-2 flex items-start gap-2 rounded-xl border border-border p-3 text-sm">
@@ -329,7 +329,7 @@ const CellStudioPage = () => {
               <div className="mt-2 h-2 overflow-hidden rounded-full bg-border">
                 <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${mastery}%` }} />
               </div>
-              <small className="mt-2 block text-[11px] text-muted-foreground">
+              <small className="mt-2 block text-[13px] text-muted-foreground">
                 {s.viewedCells.size}/{cells.length} hujayra ko'rildi · {s.viewedOrganelleKeys.size}/{totalOrganelles} organoid tekshirildi
               </small>
             </div>

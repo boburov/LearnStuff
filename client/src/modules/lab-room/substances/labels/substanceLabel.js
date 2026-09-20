@@ -1,7 +1,7 @@
 import { CanvasTexture, SRGBColorSpace } from "three";
 import { drawGhsPictogram } from "./ghs";
 
-const FONT = "Inter, 'Segoe UI', Arial, sans-serif";
+const FONT = "'Inter Variable', Inter, 'Segoe UI', Arial, sans-serif";
 const PAPER = "#f7f5ee";
 const MANILA = "#eadcb4";
 const INK = "#17191d";

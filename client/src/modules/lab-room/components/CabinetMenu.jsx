@@ -124,8 +124,8 @@ const Shelf = ({ section, urls, sectionRef, onItemPointerDown, onItemHover, onIt
       <span className="flex items-center gap-2 rounded-[3px] border border-[#b3bbc3] bg-gradient-to-b from-white to-[#dde2e6] px-2.5 py-1 shadow-[0_1px_2px_rgba(15,23,32,0.2)]">
         <span className="size-1.5 rounded-full bg-[#9aa3ac]" />
         <span className={cn("size-2 rounded-full", SECTION_DOT[section.id])} />
-        <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#26323d]">{section.name}</span>
-        <span className="text-[11px] font-semibold tabular-nums text-[#6b7783]">{section.items.length}</span>
+        <span className="text-[13px] font-bold uppercase tracking-[0.14em] text-[#26323d]">{section.name}</span>
+        <span className="text-[13px] font-semibold tabular-nums text-[#6b7783]">{section.items.length}</span>
         <span className="size-1.5 rounded-full bg-[#9aa3ac]" />
       </span>
     </div>
@@ -162,8 +162,8 @@ const Shelf = ({ section, urls, sectionRef, onItemPointerDown, onItemHover, onIt
             )}
           </div>
           <div className="mt-[10px] w-[92%] rounded-[2px] border border-[#d5d2c2] bg-[#fffdf5] px-1 py-0.5 text-center shadow-[0_1px_2px_rgba(15,23,32,0.18)]">
-            <p className="line-clamp-2 text-[10px] font-semibold leading-[12px] text-[#1f2933]">{item.name}</p>
-            {item.formula && <p className="truncate font-mono text-[10px] leading-[12px] text-[#52606d]">{item.formula}</p>}
+            <p className="line-clamp-2 text-[12px] font-semibold leading-[12px] text-[#1f2933]">{item.name}</p>
+            {item.formula && <p className="truncate font-mono text-[12px] leading-[12px] text-[#52606d]">{item.formula}</p>}
           </div>
         </div>
       ))}
@@ -360,7 +360,7 @@ const CabinetMenu = ({ world, thumbs, onClose }) => {
           <WarningSign />
           <div className="min-w-0">
             <p className="truncate text-[13px] font-bold uppercase tracking-[0.12em]">{CABINET.title}</p>
-            <p className="text-[11px] text-[#52606d]">{CABINET.stock(SUBSTANCES.length, EQUIPMENT.length)}</p>
+            <p className="text-[13px] text-[#52606d]">{CABINET.stock(SUBSTANCES.length, EQUIPMENT.length)}</p>
           </div>
           <div className="ml-auto flex items-center gap-2">
             <Input
@@ -453,7 +453,7 @@ const CabinetMenu = ({ world, thumbs, onClose }) => {
                   {hoveredItem.hazards.map((h) => (
                     <figure key={h} className="flex w-14 flex-col items-center gap-0.5">
                       <HazardIcon id={h} />
-                      <figcaption className="text-center text-[9px] leading-[11px] text-[#52606d]">{HAZARDS[h]}</figcaption>
+                      <figcaption className="text-center text-[11px] leading-[11px] text-[#52606d]">{HAZARDS[h]}</figcaption>
                     </figure>
                   ))}
                 </div>

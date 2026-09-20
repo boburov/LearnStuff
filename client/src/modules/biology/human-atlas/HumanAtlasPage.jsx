@@ -141,12 +141,12 @@ const HumanAtlasPage = () => {
 
           {/* Sahna sarlavhasi + tiklash (pastki chapda, toolbar'ga xalaqit bermaydi). */}
           <div className="pointer-events-none absolute bottom-5 left-4 z-20 hidden items-center gap-2 lg:flex">
-            <span className="rounded-full border border-border bg-background/85 px-3 py-1 text-[11px] font-medium uppercase tracking-wider text-muted-foreground backdrop-blur">
+            <span className="rounded-full border border-border bg-background/85 px-3 py-1 text-[13px] font-medium uppercase tracking-wider text-muted-foreground backdrop-blur">
               {isolate ? translateName(chosen?.name) : explode > 0.95 ? "Anatomik inventar" : explode > 0.05 ? "Ajratilgan tuzilmalar" : "Katta yoshli odam · erkak"}
             </span>
             <button
               onClick={resetAll}
-              className="pointer-events-auto inline-flex items-center gap-1 rounded-full border border-border bg-background/85 px-3 py-1 text-[11px] font-medium text-muted-foreground backdrop-blur hover:text-foreground"
+              className="pointer-events-auto inline-flex items-center gap-1 rounded-full border border-border bg-background/85 px-3 py-1 text-[13px] font-medium text-muted-foreground backdrop-blur hover:text-foreground"
             >
               <RotateCcw size={12} /> Tiklash
             </button>
