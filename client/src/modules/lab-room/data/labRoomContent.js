@@ -3,6 +3,8 @@ export const SUBTITLE =
   "Haqiqiy laboratoriya xonasida yuring, jihozlarni yaqindan ko'ring va tajribalar o'tkazing.";
 export const BACK_LABEL = "Kimyo";
 export const BACK_TO = "/chemistry";
+// Touch-only devices cannot walk the room; the single-bench lab works there.
+export const CLASSIC_TO = "/chemistry/lab-classic";
 
 export const CONTROLS = [
   { keys: ["W", "A", "S", "D"], label: "Yurish" },

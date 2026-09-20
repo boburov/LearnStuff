@@ -1,10 +1,10 @@
 import { useGLTF } from "@react-three/drei";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import useObjectState from "@/shared/hooks/useObjectState";
 import { createSnapStore } from "@/shared/utils/snapStore";
 import { cn } from "@/shared/utils/cn";
-import { BACK_TO, TEXT } from "./data/labRoomContent";
+import { BACK_TO, CLASSIC_TO, TEXT } from "./data/labRoomContent";
 import { detectDevice, loadSettings, saveSettings } from "./labRoomSettings";
 import { loadRoomManifest } from "./labRoomAssets";
 import { useFpsInput } from "./scene/useFpsInput";
@@ -273,8 +273,8 @@ const LabRoomPage = () => {
   const openMonitor = useCallback(() => actionsRef.current.openMonitor(), []);
 
   if (!device.webgl2) return <DeviceNotice kind="webgl" />;
-  // This walking room requires a keyboard and mouse.
-  if (device.touchOnly) return <DeviceNotice kind="touch" />;
+  // Phones and headsets can't walk the room with keyboard and mouse; the single-bench lab works there.
+  if (device.touchOnly) return <Navigate to={CLASSIC_TO} replace />;
 
   const playing = phase === "playing";
   const live = playing || phase === "menu";
