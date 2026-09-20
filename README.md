@@ -33,29 +33,33 @@ The server defaults to port 3001. You can copy `server/.env.example` to
 
 ## UI modules
 
-The client selectively reuses LearnStuff's pixel UI: its palette, Pixelify Sans font,
-sprites, buttons, cards, subject map, and topic selection paths.
+The pixel UI — palette, Pixelify Sans, sprites, buttons, cards, the subject map
+and the topic paths — came over from SmartLab along with every subject.
 
-- `client/src/shared/` — reusable pixel components, icons, styles helpers, and reveal behavior.
-- `client/src/modules/home/` — simple LearnStuff landing sections.
-- `client/src/modules/subjects/` — chemistry, physics, electronics, and history selection screens.
+- `client/src/shared/` — pixel components, the shared 3D lab kit, icons, hooks.
+- `client/src/modules/home/` — the landing: hero machine, counters, features, steps, call.
+- `client/src/modules/subjects/` — the subject registry and its selection screens.
+- `client/src/modules/topics/` — the live-topic registry and the full-screen shell.
 - `client/src/modules/layout/` — navigation, footer, and not-found page.
 
-Routes: `/`, `/subjects`, `/:subject`, and `/:subject/:topic`.
-The walkable chemistry lab is available at `/chemistry/lab` (`/chemistry/lab-3d`
-is an alias). It loads separately from the pixel UI and includes the room model,
-equipment, reagent cabinet, reaction simulation, physics, and sounds from LearnStuff.
-Use WASD to move, the mouse to look and interact, E for the cabinet, and Esc to pause.
-The room requires WebGL 2, a keyboard, and a mouse; touch-only devices show a notice.
-Physics has the four-stroke engine at `/physics/engine`: a procedural 3D engine with
-solid, x-ray and exploded modes, stroke stepping, sound and part cards.
-Other topic pages remain coming-soon previews. Classic/VR lab, AI services,
-and unrelated subject engines are not included. The server remains the health API.
+Routes: `/`, `/subjects`, `/:subject`, and `/:subject/:topic`. Every topic in
+the registry has a live page; they load full-screen, one chunk each, through
+`client/src/modules/topics/`.
 
-Run `npm run test:lab` for the imported chemistry engine regression tests.
-Lab implementation: `client/src/modules/lab-room/`.
-Assets: `client/public/models/lab-room/`, `client/public/sounds/lab/`, and
-`client/public/draco/`. Sound attribution is preserved in `sounds/lab/SOURCE.md`.
+- Kimyo: davriy jadval, molekulalar, atomlar, pH, gaz qonunlari, 3D laboratoriya
+  (`/chemistry/lab`, with `/chemistry/lab-classic` as the single-bench fallback
+  for phones).
+- Biologiya: hujayra, hujayra studiyasi, DNK, anatomiya, inson atlasi,
+  jarrohlik, genetika, tana simulyatori.
+- Fizika: to'rt taktli ichki yonuv dvigateli.
+- Elektronika: sxema quruvchi.
+- Tarix: Registon audio-gid va tarixiy atlas.
+
+Assets: `client/public/models/`, `client/public/sounds/`, `client/public/history/`
+and `client/public/draco/`. Sound attribution is preserved in `sounds/lab/SOURCE.md`
+and `sounds/engine/SOURCE.md`.
+
+Run `npm run test:lab` for the chemistry engine regression tests.
 
 The original JSX components are retained alongside the TypeScript entry point.
 Pixelify Sans carries every piece of interface text and ships with the bundle
