@@ -9,6 +9,7 @@ export const TOPIC_PAGES = {
   'chemistry/atoms': lazy(() => import('@/modules/chemistry/atoms/AtomsPage')),
   'chemistry/ph': lazy(() => import('@/modules/chemistry/ph/PhPage')),
   'chemistry/gas-laws': lazy(() => import('@/modules/chemistry/gas-laws/GasLawsPage')),
+  'chemistry/molecules': lazy(() => import('@/modules/chemistry/molecules/MoleculesPage')),
   'biology/cell': lazy(() => import('@/modules/biology/cell/CellPage')),
   'biology/cell-studio': lazy(() => import('@/modules/biology/cell-studio/CellStudioPage')),
   'biology/dna': lazy(() => import('@/modules/biology/dna/DnaPage')),
