@@ -7,7 +7,7 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 const WELCOME = {
   role: "assistant",
   content:
-    "Salom! Men Mira AI - SmartLab yordamchisiman 🤖✨ Modellar haqida so'rang, sizni mavzuga olib o'taman yoki test tuzib beraman. Qani, nimadan boshlaymiz? 😊",
+    "Salom! Men Mira AI - LearnStuff yordamchisiman 🤖✨ Modellar haqida so'rang, sizni mavzuga olib o'taman yoki test tuzib beraman. Qani, nimadan boshlaymiz? 😊",
 };
 
 export const useAiChat = ({ buildContext, onAction } = {}) => {

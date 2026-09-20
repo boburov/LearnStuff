@@ -33,7 +33,7 @@ The server defaults to port 3001. You can copy `server/.env.example` to
 
 ## UI modules
 
-The client selectively reuses SmartLab's pixel UI: its palette, Pixelify Sans font,
+The client selectively reuses LearnStuff's pixel UI: its palette, Pixelify Sans font,
 sprites, buttons, cards, subject map, and topic selection paths.
 
 - `client/src/shared/` — reusable pixel components, icons, styles helpers, and reveal behavior.
@@ -44,7 +44,7 @@ sprites, buttons, cards, subject map, and topic selection paths.
 Routes: `/`, `/subjects`, `/:subject`, and `/:subject/:topic`.
 The walkable chemistry lab is available at `/chemistry/lab` (`/chemistry/lab-3d`
 is an alias). It loads separately from the pixel UI and includes the room model,
-equipment, reagent cabinet, reaction simulation, physics, and sounds from SmartLab.
+equipment, reagent cabinet, reaction simulation, physics, and sounds from LearnStuff.
 Use WASD to move, the mouse to look and interact, E for the cabinet, and Esc to pause.
 The room requires WebGL 2, a keyboard, and a mouse; touch-only devices show a notice.
 Physics has the four-stroke engine at `/physics/engine`: a procedural 3D engine with
