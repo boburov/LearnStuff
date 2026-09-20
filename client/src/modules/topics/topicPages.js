@@ -24,6 +24,7 @@ export const TOPIC_PAGES = {
   'biology/surgery': lazy(() => import('@/modules/biology/surgery/SurgeryPage')),
   'biology/genetics': lazy(() => import('@/modules/biology/genetics/GeneticsPage')),
   'biology/simulator': lazy(() => import('@/modules/biology/simulator/SimulatorPage')),
+  'physics/black-hole': lazy(() => import('@/modules/physics/black-hole/BlackHolePage')),
   'physics/engine': lazy(() => import('@/modules/physics/engine/EnginePage')),
 };
 

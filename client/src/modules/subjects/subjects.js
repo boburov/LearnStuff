@@ -108,10 +108,16 @@ export const SUBJECTS = [
   {
     slug: "physics",
     title: "Fizika",
-    short: "Dvigatellar qanday ishlaydi - ichini ko'ring, qismlarga ajratib o'rganing.",
+    short: "Mexanizmlar va koinot - dvigatel ichini oching, qora tuynuk atrofida nurni kuzating.",
     icon: "Gauge",
     color: "#ea580c",
     topics: [
+      {
+        slug: "black-hole",
+        title: "Qora tuynuk",
+        short: "Astronomiya: nur qora tuynuk atrofida qanday egiladi - linza, disk va Doppler.",
+        icon: "CircleDot",
+      },
       {
         slug: "engine",
         title: "Ichki yonuv dvigateli",
