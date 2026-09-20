@@ -1,0 +1,161 @@
+/* Ion table view — faithful port of Zperiod's Ions page design. */
+
+.zperiod-ions {
+  width: 100%;
+  min-width: 0;
+}
+
+.zperiod-ions .ion-table-section {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: clamp(8px, 2vh, 24px);
+}
+
+.zperiod-ions .ion-table-heading {
+  font-size: clamp(1rem, 2vh, 1.25rem);
+  font-weight: 800;
+  color: inherit;
+  margin-bottom: clamp(6px, 1vh, 12px);
+  border-bottom: 2px solid rgba(127, 127, 127, 0.25);
+  padding: 8px 0 clamp(4px, 0.6vh, 6px);
+}
+
+.zperiod-ions .ion-table-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(6px, 1vh, 10px);
+  align-content: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Card base (merged Zperiod .element + .ion-table-cell). */
+.zperiod-ions .ion-table-cell {
+  flex-shrink: 0;
+  position: relative;
+  --ion-symbol-scale: 1;
+  width: clamp(58px, 5.6vw, 76px);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2px, 2.4cqi, 6px);
+  padding: clamp(5px, 5cqi, 9px) clamp(4px, 4cqi, 7px);
+  cursor: pointer;
+  border-radius: 15%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1f2937;
+  user-select: none;
+  overflow: hidden;
+  box-sizing: border-box;
+  container-type: inline-size;
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.25s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.zperiod-ions .ion-table-cell:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+  border-color: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.zperiod-ions .ion-table-cell:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.zperiod-ions .ion-table-cell .symbol {
+  order: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: calc(clamp(1.15rem, 31cqi, 2rem) * var(--ion-symbol-scale, 1));
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.zperiod-ions .ion-table-cell .name {
+  order: 2;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+  width: 100%;
+  max-width: 98%;
+  flex-shrink: 0;
+  margin-top: 0;
+  font-size: clamp(0.5rem, 13.8cqi, 1.06rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-align: center;
+  opacity: 0.82;
+}
+
+/* Long formulas (e.g. CH₃COO⁻) need a smaller symbol to avoid overflow. */
+.zperiod-ions .ion-table-cell.ion-long-formula .symbol {
+  font-size: calc(clamp(0.8rem, 22cqi, 1.4rem) * var(--ion-symbol-scale, 1));
+  letter-spacing: -0.04em;
+}
+
+.zperiod-ions .ion-table-cell .symbol .symbol-base {
+  display: inline;
+}
+
+/* Stack container: charge (top) + subscript (bottom). */
+.zperiod-ions .ion-table-cell .symbol .script-stack {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+  margin-left: 2px;
+  gap: 1px;
+}
+
+.zperiod-ions .ion-table-cell .symbol .script-sup,
+.zperiod-ions .ion-table-cell .symbol .script-sub,
+.zperiod-ions .ion-table-cell .symbol .symbol-base sub,
+.zperiod-ions .ion-table-cell .symbol sub,
+.zperiod-ions .ion-table-cell .symbol sup,
+.zperiod-ions .ion-table-cell .ion-charge-sup {
+  font-size: calc(18cqi * var(--ion-symbol-scale, 1));
+  font-weight: 600;
+  color: inherit;
+}
+
+/* Middle subscripts (e.g. ₂ in Cr₂O₇) inside symbol-base. */
+.zperiod-ions .ion-table-cell .symbol .symbol-base sub {
+  vertical-align: baseline;
+  position: relative;
+  top: 0.4em;
+}
+
+/* Direct subscripts (e.g. ₃ in CH₃COO) not in symbol-base. */
+.zperiod-ions .ion-table-cell .symbol > sub {
+  vertical-align: baseline;
+  position: relative;
+  top: 0.4em;
+}
+
+.zperiod-ions .ion-table-cell .symbol .script-sup,
+.zperiod-ions .ion-table-cell .symbol .script-sub {
+  display: block;
+  line-height: 1;
+}
+
+.zperiod-ions .ion-table-cell .symbol .script-sub {
+  position: relative;
+  top: 0;
+}
+
+/* Fallback for simple ions (H⁺, Na⁺, Cl⁻). */
+.zperiod-ions .ion-table-cell .ion-charge-sup {
+  vertical-align: top;
+  position: relative;
+  top: -0.5em;
+  margin-left: 2px;
+}

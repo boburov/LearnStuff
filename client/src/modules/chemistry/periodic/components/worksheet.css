@@ -1,0 +1,614 @@
+/* Worksheet generator — faithful port of Zperiod's worksheet styles, scoped + theme-mapped. */
+
+.zperiod-worksheet {
+  --bg-color: hsl(var(--background));
+  --element-bg: hsl(var(--card));
+  --border-color: hsl(var(--border));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--muted-foreground));
+  --text-muted: hsl(var(--muted-foreground));
+  --text-highlight: hsl(var(--primary));
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .zperiod-worksheet {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Controls */
+.zperiod-worksheet .worksheet-controls {
+  background: var(--element-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.zperiod-worksheet .controls-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.zperiod-worksheet .controls-header p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.zperiod-worksheet .control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zperiod-worksheet .control-group > label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+}
+
+.zperiod-worksheet .button-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.zperiod-worksheet .option-btn {
+  padding: 7px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zperiod-worksheet .option-btn:hover {
+  border-color: var(--text-secondary);
+}
+
+.zperiod-worksheet .option-btn.active {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.zperiod-worksheet .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.zperiod-worksheet .checkbox-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zperiod-worksheet .checkbox-option:hover {
+  border-color: var(--text-secondary);
+}
+
+.zperiod-worksheet .checkbox-option input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--text-highlight);
+  cursor: pointer;
+  margin-top: 3px;
+}
+
+.zperiod-worksheet .checkbox-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2px;
+}
+
+.zperiod-worksheet .checkbox-text-wrapper > span:first-child {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.zperiod-worksheet .checkbox-subtitle {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: "SF Mono", monospace;
+  margin-top: 2px;
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+.zperiod-worksheet .generate-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.zperiod-worksheet .generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.zperiod-worksheet .trust-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 4px;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+/* Preview panel */
+.zperiod-worksheet .worksheet-preview {
+  background: var(--element-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 420px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.zperiod-worksheet .preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.zperiod-worksheet .preview-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.zperiod-worksheet .preview-tab {
+  padding: 6px 14px;
+  border: 1.5px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zperiod-worksheet .preview-tab:hover {
+  background: var(--bg-color);
+}
+
+.zperiod-worksheet .preview-tab.active {
+  background: var(--text-primary);
+  color: var(--bg-color);
+}
+
+.zperiod-worksheet .export-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.zperiod-worksheet .export-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zperiod-worksheet .export-btn:hover:not(:disabled) {
+  border-color: var(--text-highlight);
+  color: var(--text-highlight);
+}
+
+.zperiod-worksheet .export-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.zperiod-worksheet .preview-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.zperiod-worksheet .preview-placeholder {
+  height: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--text-muted);
+}
+
+.zperiod-worksheet .preview-placeholder svg {
+  opacity: 0.25;
+}
+
+.zperiod-worksheet .preview-placeholder p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Paper */
+.zperiod-worksheet .worksheet-paper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.zperiod-worksheet .preview-summary-bar {
+  background: hsl(var(--secondary));
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.zperiod-worksheet .worksheet-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--text-primary);
+}
+
+.zperiod-worksheet .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.zperiod-worksheet .header-top h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.zperiod-worksheet .worksheet-id-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-color);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-family: "SF Mono", monospace;
+  border: 1px solid var(--border-color);
+}
+
+.zperiod-worksheet .header-fields {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.zperiod-worksheet .field-group {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.zperiod-worksheet .field-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.zperiod-worksheet .field-line {
+  width: 140px;
+  border-bottom: 1px solid var(--text-primary);
+}
+
+.zperiod-worksheet .field-line.short {
+  width: 40px;
+}
+
+.zperiod-worksheet .field-value {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.zperiod-worksheet .score-total {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.zperiod-worksheet .instructions {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.zperiod-worksheet .questions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.zperiod-worksheet .question-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.zperiod-worksheet .q-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-highlight);
+  min-width: 18px;
+}
+
+.zperiod-worksheet .q-equation {
+  font-size: 0.85rem;
+  font-family: "SF Mono", "Monaco", "Consolas", monospace;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.zperiod-worksheet .coef {
+  display: inline-block;
+  min-width: 14px;
+  text-align: center;
+  margin-right: 1px;
+  font-weight: 700;
+}
+
+.zperiod-worksheet .coef.blank {
+  border-bottom: 2px solid var(--text-primary);
+  color: transparent;
+  margin-bottom: -2px;
+}
+
+.zperiod-worksheet .coef.filled {
+  color: #047857;
+}
+
+.zperiod-worksheet .formula {
+  font-weight: 500;
+}
+
+.zperiod-worksheet .formula sub {
+  font-size: 0.7em;
+}
+
+.zperiod-worksheet .plus {
+  margin: 0 4px;
+  color: var(--text-secondary);
+}
+
+.zperiod-worksheet .arrow {
+  margin: 0 8px;
+  color: var(--text-primary);
+}
+
+.zperiod-worksheet .worksheet-footer {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Answer key */
+.zperiod-worksheet .answer-key .question-row {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #a7f3d0;
+}
+
+.zperiod-worksheet .answer-key .q-num,
+.zperiod-worksheet .answer-key .coef.filled {
+  color: #047857;
+}
+
+/* Practice */
+.zperiod-worksheet .practice-mode .worksheet-header {
+  border-bottom-color: #6366f1;
+}
+
+.zperiod-worksheet .practice-mode .header-top h1 {
+  color: #4f46e5;
+}
+
+.zperiod-worksheet .coef-input {
+  width: 30px;
+  height: 22px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: "SF Mono", monospace;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s ease;
+  margin-right: 1px;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.zperiod-worksheet .coef-input::-webkit-outer-spin-button,
+.zperiod-worksheet .coef-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.zperiod-worksheet .coef-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.zperiod-worksheet .coef-input.correct {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.zperiod-worksheet .coef-input.incorrect {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.zperiod-worksheet .question-row.correct {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-color: #a7f3d0;
+}
+
+.zperiod-worksheet .question-row.incorrect {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border-color: #fca5a5;
+}
+
+.zperiod-worksheet .result-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+.zperiod-worksheet .question-row.correct .result-icon {
+  color: #10b981;
+}
+
+.zperiod-worksheet .question-row.incorrect .result-icon {
+  color: #ef4444;
+}
+
+.zperiod-worksheet .practice-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.zperiod-worksheet .check-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zperiod-worksheet .check-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.zperiod-worksheet .score-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-color);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.zperiod-worksheet .score-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.zperiod-worksheet .score-value.perfect {
+  color: #10b981;
+}
+
+/* Print: only the paper. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .zperiod-worksheet .worksheet-paper,
+  .zperiod-worksheet .worksheet-paper * {
+    visibility: visible;
+  }
+  .zperiod-worksheet .worksheet-paper {
+    position: fixed;
+    inset: 0;
+    margin: 0;
+    max-width: 100%;
+    padding: 10mm;
+  }
+  .zperiod-worksheet .preview-summary-bar,
+  .zperiod-worksheet .practice-actions {
+    display: none !important;
+  }
+  .zperiod-worksheet .question-row {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

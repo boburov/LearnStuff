@@ -12,6 +12,7 @@ export const TOPIC_PAGES = {
   'chemistry/molecules': lazy(() => import('@/modules/chemistry/molecules/MoleculesPage')),
   // The single-bench lab, for phones and computers that cannot run the room.
   'chemistry/lab-classic': lazy(() => import('@/modules/chemistry/lab-classic/LabBenchPage')),
+  'chemistry/periodic-table': lazy(() => import('@/modules/chemistry/periodic/PeriodicTablePage')),
   'biology/cell': lazy(() => import('@/modules/biology/cell/CellPage')),
   'biology/cell-studio': lazy(() => import('@/modules/biology/cell-studio/CellStudioPage')),
   'biology/dna': lazy(() => import('@/modules/biology/dna/DnaPage')),

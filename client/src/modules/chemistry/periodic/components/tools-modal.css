@@ -1,0 +1,104 @@
+/* Full-screen modal that hosts a vendored Zperiod tool.
+   The modal covers the site chrome (so nothing overlaps the header) and
+   pins Zperiod's light palette so the tool renders as designed. */
+
+.chem-tool-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(8px, 2vw, 24px);
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.chem-tool-modal {
+  --bg-color: #fdfbf7;
+  --element-bg: #f5efe6;
+  --text-primary: #2c2420;
+  --text-secondary: #5d544f;
+  --text-muted: #9ca3af;
+  --text-highlight: #78350f;
+  --border-color: rgba(0, 0, 0, 0.06);
+
+  position: relative;
+  width: min(1120px, 96vw);
+  height: min(780px, 94vh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  border-radius: 20px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+}
+
+.chem-tool-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+  background: var(--bg-color);
+}
+
+.chem-tool-modal-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.chem-tool-modal-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.chem-tool-modal-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.chem-tool-modal-close {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--element-bg);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chem-tool-modal-close:hover {
+  color: var(--text-primary);
+  border-color: var(--text-secondary);
+}
+
+/* Body: positioned + flex column so the tool's own absolute/flex layout
+   (scale, receipt, panels) resolves inside the modal — not the viewport. */
+.chem-tool-modal-body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 16px;
+}
+
+/* The tool ships its own absolute title; the modal header already shows it. */
+.chem-tool-modal-body .tool-padding-label {
+  display: none;
+}
